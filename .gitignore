@@ -1,0 +1,12 @@
+
+
+# build artifacts
+*.tgz
+dist/
+
+# runtime state from local testing — never commit
+.inkpal/
+bin/
+node_modules/
+coverage/
+.vitest-cache/
