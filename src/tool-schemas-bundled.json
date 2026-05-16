@@ -1,0 +1,2346 @@
+{
+  "generated_at": "2026-05-02T18:55:42.701Z",
+  "note": "1.0.0 LOCKDOWN — descriptions only. Full input schemas fetched from Railway at tools/list time.",
+  "tools": [
+    {
+      "name": "inkpal_search_patterns",
+      "description": "Search 14,000+ real Flutter production code patterns by semantic query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_analyze_project",
+      "description": "Analyze a Flutter project to detect architecture pattern, state management, navigation, dependencies, naming conventions, and file structure.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_check_safety",
+      "description": "Run safety gates on generated code",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_import_figma",
+      "description": "Import a Figma design into Flutter code",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_analyze_visual",
+      "description": "Analyze a Flutter UI screenshot for accessibility issues (contrast, touch targets), layout problems (overflow, alignment), and design consistency.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_generate_shader",
+      "description": "Generate an Impeller-compatible GLSL shader with Dart wrapper and Flutter widget",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_lookup_error",
+      "description": "Match a Flutter/Dart error message against 200+ known error patterns and return the specific fix with confidence score and code transform",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_blast_radius",
+      "description": "Analyze the blast radius of changing a file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_check_package",
+      "description": "Verify that a package exists on pub.dev",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_context",
+      "description": "Get a project briefing: architecture, widgets, models, recent learnings, and conventions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_figma_variables",
+      "description": "Fetch Figma Variables (design tokens) from a file using the Figma Variables API",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_fabricate",
+      "description": "FABRICATE: Generate a complete Flutter application from a JSON schema description",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_fabricate_bulk",
+      "description": "Bulk FABRICATE: Generate a complete feature module with multiple screens, models, services, and router entries in one call",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_prototype",
+      "description": "Quick prototype from natural language",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_flutter_analyze",
+      "description": "Run `dart analyze` on a Flutter project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_flutter_test",
+      "description": "Run `flutter test` on a Flutter project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_flutter_build",
+      "description": "Run `flutter build` and return the artifact path",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dart_format",
+      "description": "Format Dart code using dart format",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_screenshot",
+      "description": "Capture a screenshot from a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_stitch_list",
+      "description": "List screens in a Google Stitch project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_stitch_get_image",
+      "description": "Get the preview screenshot URL for a specific screen in a Google Stitch project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_stitch_import_screen",
+      "description": "Download a Google Stitch screen, parse its Tailwind HTML, and convert it to compilable Flutter Dart code with extracted design tokens (colors, spacing, images, ",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_launch_app",
+      "description": "Launch a Flutter app with `flutter run --machine` and track the VM service URI",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_hot_reload",
+      "description": "Hot-reload or full-restart a running Flutter app via VM Service API",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_navigate_to_route",
+      "description": "Navigate a running Flutter app to a specific route/screen",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_evaluate",
+      "description": "Execute arbitrary Dart expressions on a running Flutter app via VM Service",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_wire_routes",
+      "description": "Auto-wire generated Flutter view files into the router",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_validate_patterns",
+      "description": "Validate generated Flutter code against known anti-patterns",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_tap",
+      "description": "Tap an element in a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_smart_tap",
+      "description": "Self-healing tap — attempts to tap an element, and if not found, automatically fuzzy-matches the closest visible element on screen and retries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_scroll",
+      "description": "Scroll in a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_enter_text",
+      "description": "Enter text into a text field in a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_interactive_elements",
+      "description": "List all interactive (tappable/editable) elements visible on the current screen of a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_navigate_back",
+      "description": "Pop the current route via Navigator.maybePop()",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_runtime_errors",
+      "description": "Read runtime error logs from a connected Android device (adb logcat) or iOS Simulator",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_design_system",
+      "description": "Audit the existing design system in a Flutter project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_inspect_widget_tree",
+      "description": "Inspect the live widget tree of a running Flutter app via the VM Service API",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_architecture_graph",
+      "description": "Capture a runtime architecture graph of the currently-running Flutter app: nodes (screens, widgets, services, blocs, navigators, anchors), edges (parent→child +",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_ui_plan",
+      "description": "Generate a structured UI implementation plan for a feature or screen",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_audit_ui",
+      "description": "Audit a Flutter screen/widget file for UI/UX quality issues",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_pub_dev_search",
+      "description": "Search pub.dev for Flutter/Dart packages",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_visual_test",
+      "description": "Test a single route visually: navigate to the route in a running app, capture a screenshot via ADB/xcrun, and compare it pixel-by-pixel against a saved baseline",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_visual_test_all",
+      "description": "Run visual regression tests on ALL routes in the app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_visual_baseline_save",
+      "description": "Save current screenshots as golden baselines for visual regression testing",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_visual_baseline_compare",
+      "description": "Compare two PNG images pixel-by-pixel using pixelmatch",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_visual_report",
+      "description": "Generate a visual regression report from the last test run",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_css_to_flutter",
+      "description": "Convert CSS into pixel-perfect Flutter widget code",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_to_flutter",
+      "description": "Fully automated: fetch a Figma frame/component directly from the Figma API (no manual CSS copy needed) and generate pixel-perfect Flutter widget code",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_generate_test",
+      "description": "Generate Flutter tests for a Dart file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_profile_performance",
+      "description": "Profile a Flutter project for performance issues",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_elements",
+      "description": "Discover all interactive elements on the current screen of a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_assert_ui",
+      "description": "Run assertions against the live UI of a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_device_info",
+      "description": "List all connected devices, emulators, and simulators",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_deep_link",
+      "description": "Open a deep link URL on a connected device",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_test_flow",
+      "description": "Orchestrate a multi-step test scenario on a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_start_log_session",
+      "description": "Start capturing structured logs from a running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_end_log_session",
+      "description": "End a log capture session and return structured results",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_assert_no_errors",
+      "description": "Assert that no errors occurred during a log session",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_query_logs",
+      "description": "Search and filter logs from an active session",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_list_devices",
+      "description": "List connected Flutter devices and emulators",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_hot_restart",
+      "description": "Hot restart the running Flutter app — resets ALL state and re-runs main()",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_app_logs",
+      "description": "Get recent logs from the running Flutter app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_create_project",
+      "description": "Create a new Flutter project with specified template, platforms, and organization",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dart_fix",
+      "description": "Apply automatic Dart fixes to the project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_read_package_source",
+      "description": "Read source code of any installed pub dependency",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_search_package_source",
+      "description": "Search across installed dependency source code using text or regex",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_get_widget_details",
+      "description": "Get detailed properties of a specific widget by ID from the running app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_select_widget",
+      "description": "Toggle widget selection mode on the running app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_driver_command",
+      "description": "Interact with the running Flutter app using widget-level finders (more reliable than screen coordinates)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_hover",
+      "description": "Get documentation and type info for a symbol at a specific position in a Dart file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_go_to_definition",
+      "description": "Find the definition location of a symbol",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_find_references",
+      "description": "Find all references to a symbol across the project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_drag",
+      "description": "Drag from one element or coordinate to another",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_double_tap",
+      "description": "Double-tap an element",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_scroll_to",
+      "description": "Scroll until a specific element becomes visible on screen",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_press_key",
+      "description": "Press a hardware or soft key on an Android device via ADB",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_set_slider",
+      "description": "Set a Flutter Slider widget to a target value (0.0–1.0)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_set_checkbox",
+      "description": "Check or uncheck a Flutter Checkbox widget",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_swipe",
+      "description": "Perform a directional swipe with full pixel and coordinate control",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_wait_for",
+      "description": "Poll the UI until a condition is met or timeout expires",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_assert_element",
+      "description": "Assert element state right now (no polling)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_wait_for_idle",
+      "description": "Wait until the app stops loading or animating (no loading/spinner elements visible)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_save_session",
+      "description": "Save a named snapshot of the current app state (route + screenshot + screen content)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_restore_session",
+      "description": "Navigate the running app back to a previously saved session's route",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_list_sessions",
+      "description": "List all saved sessions for this project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_coverage_report",
+      "description": "Run flutter test --coverage and return per-file coverage stats",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_coverage_gaps",
+      "description": "List files below a coverage threshold",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_video_start",
+      "description": "Start ADB screen recording on a connected Android device",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_video_stop",
+      "description": "Stop the active screen recording and pull the MP4 to .inkpal/recordings/",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_accessibility_audit",
+      "description": "Audit the current screen for WCAG 2.1 accessibility violations: touch targets < 48px (2.5.5), interactive elements without labels (4.1.2), images without alt te",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_mock_network",
+      "description": "Register an HTTP mock rule in the running app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_clear_network_mocks",
+      "description": "Remove all active HTTP mock rules from the running app.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_go_offline",
+      "description": "Disable network on the test device",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_go_online",
+      "description": "Re-enable network after inkpal_go_offline",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_network_conditions",
+      "description": "Simulate slow or lossy network conditions via InkPal Bridge delay injection",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_stability_check",
+      "description": "Monitor the running app for crashes and new runtime errors over a time window",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_diagnose",
+      "description": "Full structured health snapshot of the running app: alive status, VM Service URI, runtime errors, interactive element count, recent logs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_set_locale",
+      "description": "Change the app locale at runtime",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_verify_translations",
+      "description": "Check all ARB localization files for missing or extra translation keys",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_doctor",
+      "description": "Diagnose inkpal_bridge setup in a Flutter project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_state_capture",
+      "description": "Capture a state snapshot for time-travel debugging",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_state_list",
+      "description": "List all captured state snapshots (time-travel checkpoints)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_state_get",
+      "description": "Get a specific state snapshot by ID",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_state_diff",
+      "description": "Diff two state snapshots to see exactly what changed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_state_stream",
+      "description": "Watch live state changes in the running Flutter app over a time window",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_devtools_open",
+      "description": "Launch Flutter DevTools in the browser for deep state inspection, performance profiling, and memory analysis",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_recording_start",
+      "description": "Start recording interactions for replay or test generation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_recording_stop",
+      "description": "Stop recording interactions and get session summary (action count, duration, start/end routes).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_recording_status",
+      "description": "Check if an interaction recording is active",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_recording_export",
+      "description": "Export recorded interactions as JSON (for replay) or as a Flutter integration test",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_screen_snapshot",
+      "description": "Capture the current screen layout for later diffing",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_screen_diff",
+      "description": "Compare the current screen layout against the last snapshot",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_auto_repair",
+      "description": "Get enriched context for the most recent runtime error — includes source code window, widget tree, state, route, and fix suggestion",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_heal_watch",
+      "description": "Start watching for runtime errors in the running app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_heal_stop",
+      "description": "Stop watching for runtime errors.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_heal_verify",
+      "description": "After writing a fix, verify it works by hot reloading the app and checking if the error recurs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_heal_history",
+      "description": "View the history of all auto-repair attempts — what was fixed, whether it worked, and repair details.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_build",
+      "description": "Build or refresh the project's DNA fingerprint",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_learn",
+      "description": "Update DNA from session data — interactions (taps, scrolls, navigations), errors encountered, and insights discovered",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_suggest",
+      "description": "Get suggestions based on learned patterns",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_compare",
+      "description": "Compare this project's DNA with another project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_export",
+      "description": "Export the project's DNA fingerprint as JSON for team sharing or backup",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_design_loop",
+      "description": "Closed-loop Figma → code → hot reload → screenshot → compare → refine",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_design_compare",
+      "description": "Single-shot comparison: capture Figma frame + app screenshot → pixel diff → visual analysis",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_design_refine",
+      "description": "Analyze visual diff between Figma screenshot and app screenshot",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_ask",
+      "description": "Natural language command: decompose intent into actions → execute against running app → return results",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_plan_actions",
+      "description": "Dry-run: parse natural language intent into planned action steps without executing",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_explain_screen",
+      "description": "Describe the current app screen in plain English",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_devices_discover",
+      "description": "List all connected devices (Android emulators, iOS Simulators, physical devices, Chrome) with platform info",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_launch_all",
+      "description": "Launch the Flutter app on all connected devices (or a subset) in parallel",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_execute_all",
+      "description": "Execute an action on all devices simultaneously",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_screenshot_all",
+      "description": "Capture screenshots on all connected devices simultaneously",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_compare_all",
+      "description": "Visual comparison matrix across all devices",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_test_cross_device",
+      "description": "Full cross-device test: execute action on all devices → screenshot all → visual comparison matrix",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_register_app",
+      "description": "Register a Flutter app or API endpoint for cross-app orchestration",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_orchestrate",
+      "description": "Execute a cross-app flow",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_orchestrate_status",
+      "description": "Status of all registered apps",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_cross_app_test",
+      "description": "End-to-end cross-app test: register apps + execute flow in one call",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_auto_commit",
+      "description": "Smart commit: stage all changes, generate a commit message from the diff (categorizes feat/fix/chore, counts files by type), and commit.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_create_pr",
+      "description": "Create a GitHub PR with commit log, diff summary, optional screenshots, test results, and cross-device comparison",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_pre_merge_gate",
+      "description": "Run all-domain quality gate: flutter analyze + flutter test + safety check",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_deploy",
+      "description": "Build release artifact (APK/IPA/web) and provide store upload instructions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_ship",
+      "description": "End-to-end ship pipeline: auto-commit → create PR → quality gate → deploy",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_release_notes",
+      "description": "Generate release notes from commits since last git tag",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_connect_crashes",
+      "description": "Connect to a crash reporting service (Sentry, Crashlytics, or Bugsnag)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_connect_analytics",
+      "description": "Connect to an analytics service (Firebase, Amplitude, or Mixpanel)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_prod_crashes",
+      "description": "Get production crashes from the connected crash service",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_prod_flows",
+      "description": "Get real user flows from the connected analytics service",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_prod_sync",
+      "description": "Sync production data into HEAL + DNA + TEST domains",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_prod_visual_check",
+      "description": "Compare a production screenshot against a baseline",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_prod_health",
+      "description": "Production health dashboard",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_push",
+      "description": "Push local project DNA to the team store (git-based .inkpal/team-dna.json or cloud via Railway)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_pull",
+      "description": "Pull team DNA from the shared store and merge into local project DNA",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_team_merge",
+      "description": "Explicitly merge two DNA snapshots",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_audit",
+      "description": "View the DNA audit trail — who taught the AI what, and when",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_dna_conflicts",
+      "description": "Show unresolved DNA merge conflicts",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_storage_status",
+      "description": "Show .inkpal/ disk usage — total size, file counts per subdirectory, quota used %",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_storage_cleanup",
+      "description": "Run retention rules to delete old artifacts (screenshots, videos, diffs, sessions) and rotate logs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_storage_config",
+      "description": "View or update storage limits",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_mcp_advisor",
+      "description": "Recommend external MCP servers for your Flutter project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_mcp_registry",
+      "description": "Browse the full registry of 33+ known MCP servers that complement Flutter development",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_mcp_setup_guide",
+      "description": "Get step-by-step setup instructions for a specific MCP server",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_page_summary",
+      "description": "Get the current screen's accessibility tree as compact JSON with semantic refs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_find_element",
+      "description": "Find a UI element by semantic ref (e.g",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_batch_execute",
+      "description": "Execute up to 10 tool actions in a single call to reduce round-trips",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_network_record",
+      "description": "Record network traffic from the running app",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_network_replay",
+      "description": "Replay a recorded network session — generates mock rules from captured traffic for deterministic testing.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_compare_versions",
+      "description": "Compare Flutter package versions against pub.dev latest",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_wiring_validate",
+      "description": "Run 9 semantic wiring checks on generated Flutter code — catches errors dart analyze cannot: provider resolution, route completeness, import coherence, circular",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_confidence_score",
+      "description": "Compute multi-dimensional confidence score (0-100) for generated Flutter code",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_evolution_plan",
+      "description": "Plan safe incremental regeneration for a fabricated project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_audit",
+      "description": "Score a Figma file's portability to Flutter code (0-100)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_pixel_diff",
+      "description": "Compare a running Flutter app's screenshot against a Figma design PNG using pixel-level diffing",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_workspace",
+      "description": "Manage the persistent on-disk Figma workspace cache that the Figma→Flutter pipeline reads from",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_screen",
+      "description": "End-to-end Figma→Flutter screen emission",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_converge",
+      "description": "Iterative Figma→Flutter convergence via the bridge runtime",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_list_app_extensions",
+      "description": "List the app-registered VM service extensions surfaced by the host app through InkPalAppExtensions (bridge ≥ 1.4)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_call_app_extension",
+      "description": "Invoke an app-registered VM service extension by name",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_responsive",
+      "description": "Detect multi-breakpoint frame groups in the Figma file (same base name at mobile/tablet/desktop widths, or explicit \"/Mobile\" | \"/Tablet\" | \"/Desktop\" suffix), ",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    },
+    {
+      "name": "inkpal_figma_verify_flow",
+      "description": "Walk the Figma prototype graph through the running Flutter app — tap each linked button, wait for transition, screenshot + pixel-diff the landing screen against",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_path": {
+            "type": "string",
+            "description": "Flutter project root (default: cwd)"
+          }
+        }
+      }
+    }
+  ]
+}

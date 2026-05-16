@@ -1,0 +1,62 @@
+{
+  "name": "inkpal",
+  "version": "1.0.1",
+  "description": "InkPal — AI-powered Flutter development tools for Claude Code, Cursor & Windsurf",
+  "type": "module",
+  "bin": {
+    "inkpal-mcp": "./dist/server.js",
+    "inkpal": "./dist/cli.js"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/tool-schemas-bundled.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "PUBLISHING.md"
+  ],
+  "scripts": {
+    "build": "tsc --sourceMap false --declaration false && cp src/tool-schemas-bundled.json dist/",
+    "build:binary": "bash build.sh",
+    "test": "npm run build && vitest run",
+    "test:watch": "vitest",
+    "moat-guard": "node scripts/moat-guard.mjs",
+    "prepublishOnly": "npm run build && npm run moat-guard"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@types/pngjs": "^6.0.5",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "author": "InkPal <contact@inkpal.ai>",
+  "homepage": "https://inkpal.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InkPalAI/inkpal_npm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/InkPalAI/inkpal_npm/issues"
+  },
+  "keywords": [
+    "flutter",
+    "dart",
+    "ai",
+    "mcp",
+    "claude",
+    "cursor",
+    "windsurf",
+    "code-generation",
+    "inkpal"
+  ]
+}

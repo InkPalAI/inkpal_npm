@@ -1,0 +1,147 @@
+# Publish the `inkpal` npm package with provenance attestation.
+#
+# This workflow lives in the standalone public repo InkPalAI/inkpal_npm,
+# which is derived from the private monorepo (01588/dartmind) via
+# `git subtree push --prefix=packages/inkpal-client`. Develop in the
+# monorepo, push the subtree to this repo, tag a release here, and the
+# publish runs with provenance.
+#
+# Triggers:
+#   - tag push matching `v*` (e.g. `v1.0.0`)
+#   - manual workflow_dispatch with a version input
+#
+# Security posture:
+#   - Public repo → free GitHub Actions minutes → no billing surprises
+#   - Provenance attestation via Sigstore + GitHub OIDC — every published
+#     artifact is cryptographically tied to this exact workflow run +
+#     this exact source commit (independently verifiable since the repo
+#     is public)
+#   - No long-lived NPM_TOKEN required IF the npm package has Trusted
+#     Publishers configured (see PUBLISHING.md). Falls back to NPM_TOKEN
+#     secret if Trusted Publishers isn't set up.
+#   - Concurrency lock — only one publish at a time
+#
+# What "provenance" buys us:
+#   The published tarball gets a green "Built and signed with this
+#   workflow" badge on npmjs.com. Consumers can verify the published
+#   bytes were produced by this exact source + workflow with:
+#     npm view inkpal@<version> --json | jq .dist.signatures
+#     npm audit signatures
+
+name: Publish inkpal to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (must match package.json)'
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: publish-inkpal
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  publish:
+    name: Build, verify, sign, publish
+    runs-on: ubuntu-latest
+    environment:
+      name: production-npm
+      url: https://www.npmjs.com/package/inkpal
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify tag matches package.json version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/v}"
+          PKG_VERSION="$(node -p 'require("./package.json").version')"
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "::error::tag version (v$TAG_VERSION) does not match package.json version ($PKG_VERSION)"
+            exit 1
+          fi
+          echo "Tag and package.json agree on version $PKG_VERSION"
+
+      - name: Verify dispatch input matches package.json version
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          INPUT_VERSION="${{ github.event.inputs.version }}"
+          PKG_VERSION="$(node -p 'require("./package.json").version')"
+          if [ "$INPUT_VERSION" != "$PKG_VERSION" ]; then
+            echo "::error::dispatch input ($INPUT_VERSION) does not match package.json version ($PKG_VERSION)"
+            exit 1
+          fi
+          echo "Dispatch input and package.json agree on version $PKG_VERSION"
+
+      - name: Refuse to publish a version that already exists on npm
+        run: |
+          PKG_VERSION="$(node -p 'require("./package.json").version')"
+          if npm view "inkpal@$PKG_VERSION" version > /dev/null 2>&1; then
+            echo "::error::inkpal@$PKG_VERSION is already published on npm. Bump the version in package.json before re-running."
+            exit 1
+          fi
+          echo "Version $PKG_VERSION is not yet on npm — safe to publish."
+
+      - name: Build + moat-guard (prepublishOnly pipeline)
+        run: npm run prepublishOnly
+
+      - name: Run tests
+        run: npm test
+
+      - name: Audit dependencies (production only)
+        run: npm audit --omit=dev --audit-level=moderate
+
+      - name: Print tarball contents (for the audit log)
+        run: npm pack --dry-run
+
+      - name: Publish to npm with provenance
+        run: npm publish --provenance --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Verify provenance attestation
+        run: |
+          PKG_VERSION="$(node -p 'require("./package.json").version')"
+          sleep 10
+          npm audit signatures --registry=https://registry.npmjs.org/ inkpal@$PKG_VERSION || \
+            echo "::warning::audit signatures could not verify yet — check https://www.npmjs.com/package/inkpal manually in a few minutes"
+
+      - name: Summary
+        run: |
+          PKG_VERSION="$(node -p 'require("./package.json").version')"
+          {
+            echo "## inkpal@$PKG_VERSION published"
+            echo ""
+            echo "- Tarball: https://www.npmjs.com/package/inkpal/v/$PKG_VERSION"
+            echo "- Source commit: ${{ github.sha }}"
+            echo "- Workflow: ${{ github.workflow }} #${{ github.run_number }}"
+            echo "- Provenance: signed via Sigstore + GitHub OIDC"
+            echo ""
+            echo "Verify locally:"
+            echo '```'
+            echo "npm view inkpal@$PKG_VERSION --json | jq '.dist.signatures'"
+            echo "npm audit signatures"
+            echo '```'
+          } >> $GITHUB_STEP_SUMMARY
